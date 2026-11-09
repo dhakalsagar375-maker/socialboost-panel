@@ -1,136 +1,289 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SocialBoost Panel</title>
+
 <style>
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#0b1020;
-  color:white;
+* {
+  box-sizing: border-box;
 }
-header{
-  background:#151d35;
-  padding:20px;
-  font-size:23px;
-  font-weight:bold;
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b1020;
+  color: white;
 }
-header span{color:#38bdf8}
-.container{padding:20px}
-h2{margin-top:10px}
-p{color:#aab5cc}
-.balance{
-  background:linear-gradient(120deg,#155e75,#2563eb);
-  padding:22px;
-  border-radius:14px;
-  margin:20px 0;
+
+header {
+  background: #151d35;
+  padding: 22px;
+  font-size: 25px;
+  font-weight: bold;
 }
-.balance h1{margin:8px 0}
-.card{
-  background:#17213a;
-  padding:18px;
-  border-radius:13px;
-  margin-bottom:15px;
+
+header span {
+  color: #38bdf8;
 }
-label{display:block;margin:15px 0 7px}
-select,input{
-  width:100%;
-  padding:14px;
-  border:0;
-  border-radius:8px;
-  background:#263451;
-  color:white;
-  font-size:15px;
+
+.container {
+  max-width: 650px;
+  margin: auto;
+  padding: 20px;
 }
-button{
-  width:100%;
-  padding:15px;
-  margin-top:20px;
-  background:#0ea5e9;
-  color:white;
-  border:0;
-  border-radius:9px;
-  font-size:17px;
-  font-weight:bold;
+
+.hero {
+  padding: 25px 0;
 }
-.service{
-  display:flex;
-  justify-content:space-between;
-  padding:12px 0;
-  border-bottom:1px solid #35415c;
+
+.hero h1 {
+  font-size: 30px;
 }
-small{color:#9caac3}
+
+.hero p {
+  color: #aab5cc;
+  line-height: 1.6;
+}
+
+.card {
+  background: #17213a;
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+}
+
+h2, h3 {
+  margin-top: 5px;
+}
+
+label {
+  display: block;
+  margin: 17px 0 8px;
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #35415c;
+  border-radius: 9px;
+  background: #263451;
+  color: white;
+  font-size: 15px;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  padding: 16px;
+  margin-top: 20px;
+  background: #0ea5e9;
+  color: white;
+  border: 0;
+  border-radius: 9px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0284c7;
+}
+
+.info {
+  background: #102c40;
+  border-left: 4px solid #38bdf8;
+  padding: 14px;
+  border-radius: 8px;
+  color: #d5eaff;
+  line-height: 1.5;
+}
+
+.service {
+  padding: 13px 0;
+  border-bottom: 1px solid #35415c;
+}
+
+small {
+  color: #aab5cc;
+}
+
+footer {
+  text-align: center;
+  color: #9caac3;
+  padding: 25px;
+}
 </style>
 </head>
+
 <body>
 
-<header>Social<span>Boost</span> Panel</header>
+<header>
+  Social<span>Boost</span> Panel
+</header>
 
 <div class="container">
-<h2>Welcome to SocialBoost</h2>
-<p>Your Social Media Marketing Dashboard</p>
 
-<div class="balance">
-<small>YOUR DEMO BALANCE</small>
-<h1>AED 0.00</h1>
-<small>Demo account</small>
+  <section class="hero">
+    <h1>Grow Your Social Media</h1>
+    <p>
+      Reach more real people with social media
+      content promotion and audience campaigns.
+    </p>
+  </section>
+
+  <div class="card">
+    <h2>Place Your Order</h2>
+    <p>Submit your promotion request below.</p>
+
+    <form id="orderForm">
+
+      <label>Select Platform</label>
+      <select id="platform" required>
+        <option value="">Choose platform</option>
+        <option>Facebook</option>
+        <option>Instagram</option>
+        <option>TikTok</option>
+        <option>YouTube</option>
+      </select>
+
+      <label>Select Service</label>
+      <select id="service" required>
+        <option value="">Choose service</option>
+        <option>Organic Audience Promotion</option>
+        <option>Video Content Promotion</option>
+        <option>Profile Promotion</option>
+        <option>Brand Awareness Campaign</option>
+      </select>
+
+      <label>Public Profile / Video Link</label>
+      <input
+        type="url"
+        id="link"
+        placeholder="https://..."
+        required
+      >
+
+      <label>Promotion Budget (AED)</label>
+      <select id="budget" required>
+        <option value="">Select budget</option>
+        <option value="20">AED 20</option>
+        <option value="50">AED 50</option>
+        <option value="100">AED 100</option>
+        <option value="200">AED 200</option>
+        <option value="Custom">Custom budget</option>
+      </select>
+
+      <label>Campaign Duration</label>
+      <select id="duration" required>
+        <option value="">Choose duration</option>
+        <option>3 Days</option>
+        <option>7 Days</option>
+        <option>14 Days</option>
+        <option>30 Days</option>
+      </select>
+
+      <label>Additional Instructions</label>
+      <textarea
+        id="notes"
+        placeholder="Tell us about your promotion goal..."
+      ></textarea>
+
+      <button type="submit">Submit Order Request</button>
+
+    </form>
+
+    <p id="result"></p>
+  </div>
+
+  <div class="card">
+    <h2>Our Services</h2>
+
+    <div class="service">
+      Facebook Audience Promotion
+    </div>
+
+    <div class="service">
+      Instagram Profile Promotion
+    </div>
+
+    <div class="service">
+      TikTok Video Promotion
+    </div>
+
+    <div class="service">
+      YouTube Content Promotion
+    </div>
+  </div>
+
+  <div class="info">
+    <strong>Important:</strong>
+    We promote content to real audiences.
+    Followers are not guaranteed. Never share
+    your social media password.
+  </div>
+
 </div>
 
-<div class="card">
-<h3>Place New Order</h3>
-
-<label>Select Platform</label>
-<select id="platform">
-<option>Facebook</option>
-<option>Instagram</option>
-<option>TikTok</option>
-<option>YouTube</option>
-</select>
-
-<label>Select Service</label>
-<select id="service">
-<option>Organic Audience Promotion</option>
-<option>Social Media Content Promotion</option>
-<option>Video Advertising</option>
-</select>
-
-<label>Profile / Video Link</label>
-<input id="link" placeholder="Paste your public link">
-
-<label>Quantity</label>
-<input id="quantity" type="number"
-placeholder="Enter quantity">
-
-<button onclick="order()">Submit Demo Order</button>
-<p id="result"></p>
-</div>
-
-<div class="card">
-<h3>Our Platforms</h3>
-<div class="service">Facebook <span>●</span></div>
-<div class="service">Instagram <span>●</span></div>
-<div class="service">TikTok <span>●</span></div>
-<div class="service">YouTube <span>●</span></div>
-</div>
-
-<small>SocialBoost Panel © 2026</small>
-</div>
+<footer>
+  SocialBoost Panel © 2026
+  <br>
+  <small>Real Audience. Genuine Promotion.</small>
+</footer>
 
 <script>
-function order(){
-let link=document.getElementById("link").value;
-let qty=document.getElementById("quantity").value;
-if(!link || !qty || qty<=0){
-alert("Please enter link and quantity");
-return;
-}
-document.getElementById("result").innerText=
-"Demo order submitted! No real service or payment.";
-}
+document.getElementById("orderForm").addEventListener(
+  "submit",
+  function(event) {
+
+    event.preventDefault();
+
+    const platform =
+      document.getElementById("platform").value;
+
+    const service =
+      document.getElementById("service").value;
+
+    const link =
+      document.getElementById("link").value;
+
+    const budget =
+      document.getElementById("budget").value;
+
+    const duration =
+      document.getElementById("duration").value;
+
+    const notes =
+      document.getElementById("notes").value;
+
+    const order = `
+NEW SOCIALBOOST ORDER
+
+Platform: ${platform}
+Service: ${service}
+Profile Link: ${link}
+Budget: ${budget === "Custom" ? "Custom" : "AED " + budget}
+Duration: ${duration}
+Instructions: ${notes || "None"}
+
+Please review this promotion request.
+    `;
+
+    document.getElementById("result").textContent =
+      "Your order details are ready. WhatsApp order delivery will be activated after connecting your business number.";
+
+    // WhatsApp connection will be added
+    // after entering the business number.
+
+    console.log(order);
+  }
+);
 </script>
 
 </body>
