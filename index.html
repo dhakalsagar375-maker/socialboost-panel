@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SocialBoost Panel</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#0b1020;
+  color:white;
+}
+header{
+  background:#151d35;
+  padding:20px;
+  font-size:23px;
+  font-weight:bold;
+}
+header span{color:#38bdf8}
+.container{padding:20px}
+h2{margin-top:10px}
+p{color:#aab5cc}
+.balance{
+  background:linear-gradient(120deg,#155e75,#2563eb);
+  padding:22px;
+  border-radius:14px;
+  margin:20px 0;
+}
+.balance h1{margin:8px 0}
+.card{
+  background:#17213a;
+  padding:18px;
+  border-radius:13px;
+  margin-bottom:15px;
+}
+label{display:block;margin:15px 0 7px}
+select,input{
+  width:100%;
+  padding:14px;
+  border:0;
+  border-radius:8px;
+  background:#263451;
+  color:white;
+  font-size:15px;
+}
+button{
+  width:100%;
+  padding:15px;
+  margin-top:20px;
+  background:#0ea5e9;
+  color:white;
+  border:0;
+  border-radius:9px;
+  font-size:17px;
+  font-weight:bold;
+}
+.service{
+  display:flex;
+  justify-content:space-between;
+  padding:12px 0;
+  border-bottom:1px solid #35415c;
+}
+small{color:#9caac3}
+</style>
+</head>
+<body>
+
+<header>Social<span>Boost</span> Panel</header>
+
+<div class="container">
+<h2>Welcome to SocialBoost</h2>
+<p>Your Social Media Marketing Dashboard</p>
+
+<div class="balance">
+<small>YOUR DEMO BALANCE</small>
+<h1>AED 0.00</h1>
+<small>Demo account</small>
+</div>
+
+<div class="card">
+<h3>Place New Order</h3>
+
+<label>Select Platform</label>
+<select id="platform">
+<option>Facebook</option>
+<option>Instagram</option>
+<option>TikTok</option>
+<option>YouTube</option>
+</select>
+
+<label>Select Service</label>
+<select id="service">
+<option>Organic Audience Promotion</option>
+<option>Social Media Content Promotion</option>
+<option>Video Advertising</option>
+</select>
+
+<label>Profile / Video Link</label>
+<input id="link" placeholder="Paste your public link">
+
+<label>Quantity</label>
+<input id="quantity" type="number"
+placeholder="Enter quantity">
+
+<button onclick="order()">Submit Demo Order</button>
+<p id="result"></p>
+</div>
+
+<div class="card">
+<h3>Our Platforms</h3>
+<div class="service">Facebook <span>●</span></div>
+<div class="service">Instagram <span>●</span></div>
+<div class="service">TikTok <span>●</span></div>
+<div class="service">YouTube <span>●</span></div>
+</div>
+
+<small>SocialBoost Panel © 2026</small>
+</div>
+
+<script>
+function order(){
+let link=document.getElementById("link").value;
+let qty=document.getElementById("quantity").value;
+if(!link || !qty || qty<=0){
+alert("Please enter link and quantity");
+return;
+}
+document.getElementById("result").innerText=
+"Demo order submitted! No real service or payment.";
+}
+</script>
+
+</body>
+</html>
