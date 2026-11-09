@@ -6,9 +6,7 @@
 <title>SocialBoost Panel</title>
 
 <style>
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -24,9 +22,7 @@ header {
   font-weight: bold;
 }
 
-header span {
-  color: #38bdf8;
-}
+header span { color: #38bdf8; }
 
 .container {
   max-width: 650px;
@@ -34,13 +30,9 @@ header span {
   padding: 20px;
 }
 
-.hero {
-  padding: 25px 0;
-}
+.hero { padding: 25px 0; }
 
-.hero h1 {
-  font-size: 30px;
-}
+.hero h1 { font-size: 30px; }
 
 .hero p {
   color: #aab5cc;
@@ -54,9 +46,7 @@ header span {
   margin-bottom: 20px;
 }
 
-h2, h3 {
-  margin-top: 5px;
-}
+h2, h3 { margin-top: 5px; }
 
 label {
   display: block;
@@ -92,9 +82,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  background: #0284c7;
-}
+button:hover { background: #0284c7; }
 
 .info {
   background: #102c40;
@@ -110,9 +98,7 @@ button:hover {
   border-bottom: 1px solid #35415c;
 }
 
-small {
-  color: #aab5cc;
-}
+small { color: #aab5cc; }
 
 footer {
   text-align: center;
@@ -199,27 +185,16 @@ footer {
 
     </form>
 
-    <p id="result"></p>
+    <p id="result" aria-live="polite"></p>
   </div>
 
   <div class="card">
     <h2>Our Services</h2>
 
-    <div class="service">
-      Facebook Audience Promotion
-    </div>
-
-    <div class="service">
-      Instagram Profile Promotion
-    </div>
-
-    <div class="service">
-      TikTok Video Promotion
-    </div>
-
-    <div class="service">
-      YouTube Content Promotion
-    </div>
+    <div class="service">Facebook Audience Promotion</div>
+    <div class="service">Instagram Profile Promotion</div>
+    <div class="service">TikTok Video Promotion</div>
+    <div class="service">YouTube Content Promotion</div>
   </div>
 
   <div class="info">
@@ -244,23 +219,12 @@ document.getElementById("orderForm").addEventListener(
 
     event.preventDefault();
 
-    const platform =
-      document.getElementById("platform").value;
-
-    const service =
-      document.getElementById("service").value;
-
-    const link =
-      document.getElementById("link").value;
-
-    const budget =
-      document.getElementById("budget").value;
-
-    const duration =
-      document.getElementById("duration").value;
-
-    const notes =
-      document.getElementById("notes").value;
+    const platform = document.getElementById("platform").value;
+    const service = document.getElementById("service").value;
+    const link = document.getElementById("link").value;
+    const budget = document.getElementById("budget").value;
+    const duration = document.getElementById("duration").value;
+    const notes = document.getElementById("notes").value;
 
     const order = `
 NEW SOCIALBOOST ORDER
@@ -275,13 +239,16 @@ Instructions: ${notes || "None"}
 Please review this promotion request.
     `;
 
+    const whatsappNumber = "971525427545";
+
+    const whatsappURL =
+      "https://wa.me/" + whatsappNumber +
+      "?text=" + encodeURIComponent(order);
+
     document.getElementById("result").textContent =
-      "Your order details are ready. WhatsApp order delivery will be activated after connecting your business number.";
+      "Opening WhatsApp. Please press Send to submit your order.";
 
-    // WhatsApp connection will be added
-    // after entering the business number.
-
-    console.log(order);
+    window.open(whatsappURL, "_blank");
   }
 );
 </script>
