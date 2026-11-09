@@ -1,256 +1,190 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SocialBoost Panel</title>
 
 <style>
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0b1020;
-  color: white;
-}
-
-header {
-  background: #151d35;
-  padding: 22px;
-  font-size: 25px;
-  font-weight: bold;
-}
-
-header span { color: #38bdf8; }
-
-.container {
-  max-width: 650px;
-  margin: auto;
-  padding: 20px;
-}
-
-.hero { padding: 25px 0; }
-
-.hero h1 { font-size: 30px; }
-
-.hero p {
-  color: #aab5cc;
-  line-height: 1.6;
-}
-
-.card {
-  background: #17213a;
-  padding: 20px;
-  border-radius: 14px;
-  margin-bottom: 20px;
-}
-
-h2, h3 { margin-top: 5px; }
-
-label {
-  display: block;
-  margin: 17px 0 8px;
-  font-weight: bold;
-}
-
-input, select, textarea {
-  width: 100%;
-  padding: 14px;
-  border: 1px solid #35415c;
-  border-radius: 9px;
-  background: #263451;
-  color: white;
-  font-size: 15px;
-}
-
-textarea {
-  min-height: 80px;
-  resize: vertical;
-}
-
-button {
-  width: 100%;
-  padding: 16px;
-  margin-top: 20px;
-  background: #0ea5e9;
-  color: white;
-  border: 0;
-  border-radius: 9px;
-  font-size: 17px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-button:hover { background: #0284c7; }
-
-.info {
-  background: #102c40;
-  border-left: 4px solid #38bdf8;
-  padding: 14px;
-  border-radius: 8px;
-  color: #d5eaff;
-  line-height: 1.5;
-}
-
-.service {
-  padding: 13px 0;
-  border-bottom: 1px solid #35415c;
-}
-
-small { color: #aab5cc; }
-
-footer {
-  text-align: center;
-  color: #9caac3;
-  padding: 25px;
-}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#0b1020;color:white}
+header{background:#151d35;padding:22px;font-size:25px;font-weight:bold}
+header span{color:#38bdf8}
+.container{max-width:650px;margin:auto;padding:20px}
+.hero{padding:20px 0}
+.hero p{color:#aab5cc;line-height:1.6}
+.card{background:#17213a;padding:20px;border-radius:14px;margin-bottom:20px}
+label{display:block;margin:17px 0 8px;font-weight:bold}
+input,select,textarea{width:100%;padding:14px;border:1px solid #35415c;border-radius:9px;background:#263451;color:white;font-size:15px}
+textarea{min-height:80px;resize:vertical}
+button{width:100%;padding:16px;margin-top:20px;background:#0ea5e9;color:white;border:0;border-radius:9px;font-size:17px;font-weight:bold;cursor:pointer}
+button:disabled{opacity:.6}
+.info{background:#102c40;border-left:4px solid #38bdf8;padding:14px;border-radius:8px;line-height:1.5;color:#d5eaff}
+.service{padding:13px 0;border-bottom:1px solid #35415c}
+footer{text-align:center;color:#9caac3;padding:25px}
+#result{line-height:1.5;overflow-wrap:anywhere}
 </style>
 </head>
 
 <body>
 
-<header>
-  Social<span>Boost</span> Panel
-</header>
+<header>Social<span>Boost</span> Panel</header>
 
 <div class="container">
 
-  <section class="hero">
-    <h1>Grow Your Social Media</h1>
-    <p>
-      Reach more real people with social media
-      content promotion and audience campaigns.
-    </p>
-  </section>
+<section class="hero">
+<h1>Grow Your Social Media</h1>
+<p>Reach more real people with social media content promotion and audience campaigns.</p>
+</section>
 
-  <div class="card">
-    <h2>Place Your Order</h2>
-    <p>Submit your promotion request below.</p>
+<div class="card">
+<h2>Place Your Order</h2>
+<p>Submit your promotion request below.</p>
 
-    <form id="orderForm">
+<form id="orderForm">
 
-      <label>Select Platform</label>
-      <select id="platform" required>
-        <option value="">Choose platform</option>
-        <option>Facebook</option>
-        <option>Instagram</option>
-        <option>TikTok</option>
-        <option>YouTube</option>
-      </select>
+<label>Select Platform</label>
+<select id="platform" required>
+<option value="">Choose platform</option>
+<option>Facebook</option>
+<option>Instagram</option>
+<option>TikTok</option>
+<option>YouTube</option>
+</select>
 
-      <label>Select Service</label>
-      <select id="service" required>
-        <option value="">Choose service</option>
-        <option>Organic Audience Promotion</option>
-        <option>Video Content Promotion</option>
-        <option>Profile Promotion</option>
-        <option>Brand Awareness Campaign</option>
-      </select>
+<label>Select Service</label>
+<select id="service" required>
+<option value="">Choose service</option>
+<option>Organic Audience Promotion</option>
+<option>Video Content Promotion</option>
+<option>Profile Promotion</option>
+<option>Brand Awareness Campaign</option>
+</select>
 
-      <label>Public Profile / Video Link</label>
-      <input
-        type="url"
-        id="link"
-        placeholder="https://..."
-        required
-      >
+<label>Public Profile / Video Link</label>
+<input type="url" id="link" placeholder="https://..." required>
 
-      <label>Promotion Budget (AED)</label>
-      <select id="budget" required>
-        <option value="">Select budget</option>
-        <option value="20">AED 20</option>
-        <option value="50">AED 50</option>
-        <option value="100">AED 100</option>
-        <option value="200">AED 200</option>
-        <option value="Custom">Custom budget</option>
-      </select>
+<label>Promotion Budget (AED)</label>
+<select id="budget" required>
+<option value="">Select budget</option>
+<option value="20">AED 20</option>
+<option value="50">AED 50</option>
+<option value="100">AED 100</option>
+<option value="200">AED 200</option>
+</select>
 
-      <label>Campaign Duration</label>
-      <select id="duration" required>
-        <option value="">Choose duration</option>
-        <option>3 Days</option>
-        <option>7 Days</option>
-        <option>14 Days</option>
-        <option>30 Days</option>
-      </select>
+<label>Campaign Duration</label>
+<select id="duration" required>
+<option value="">Choose duration</option>
+<option>3 Days</option>
+<option>7 Days</option>
+<option>14 Days</option>
+<option>30 Days</option>
+</select>
 
-      <label>Additional Instructions</label>
-      <textarea
-        id="notes"
-        placeholder="Tell us about your promotion goal..."
-      ></textarea>
+<label>Additional Instructions</label>
+<textarea id="notes" placeholder="Tell us about your promotion goal..."></textarea>
 
-      <button type="submit">Submit Order Request</button>
+<button type="submit" id="submitBtn">Submit Order Request</button>
+</form>
 
-    </form>
+<p id="result" aria-live="polite"></p>
+</div>
 
-    <p id="result" aria-live="polite"></p>
-  </div>
+<div class="card">
+<h2>Our Services</h2>
+<div class="service">Facebook Audience Promotion</div>
+<div class="service">Instagram Profile Promotion</div>
+<div class="service">TikTok Video Promotion</div>
+<div class="service">YouTube Content Promotion</div>
+</div>
 
-  <div class="card">
-    <h2>Our Services</h2>
-
-    <div class="service">Facebook Audience Promotion</div>
-    <div class="service">Instagram Profile Promotion</div>
-    <div class="service">TikTok Video Promotion</div>
-    <div class="service">YouTube Content Promotion</div>
-  </div>
-
-  <div class="info">
-    <strong>Important:</strong>
-    We promote content to real audiences.
-    Followers are not guaranteed. Never share
-    your social media password.
-  </div>
+<div class="info">
+<strong>Important:</strong>
+We promote content to real audiences. Followers are not guaranteed. Never share your social media password.
+</div>
 
 </div>
 
 <footer>
-  SocialBoost Panel © 2026
-  <br>
-  <small>Real Audience. Genuine Promotion.</small>
+SocialBoost Panel © 2026<br>
+Real Audience. Genuine Promotion.
 </footer>
 
 <script>
-document.getElementById("orderForm").addEventListener(
-  "submit",
-  function(event) {
+const SUPABASE_URL = "https://rxgaqshtxhvgyuvmhayq.supabase.co";
+const SUPABASE_KEY = "sb_publishable_H5ERcNMgMa7sPrE7xxoZCw_WFI3z30j";
+const WHATSAPP_NUMBER = "971525427545";
 
-    event.preventDefault();
+document.getElementById("orderForm").addEventListener("submit", async function(event) {
+  event.preventDefault();
 
-    const platform = document.getElementById("platform").value;
-    const service = document.getElementById("service").value;
-    const link = document.getElementById("link").value;
-    const budget = document.getElementById("budget").value;
-    const duration = document.getElementById("duration").value;
-    const notes = document.getElementById("notes").value;
+  const button = document.getElementById("submitBtn");
+  const result = document.getElementById("result");
+
+  const orderData = {
+    platform: document.getElementById("platform").value,
+    service: document.getElementById("service").value,
+    profile_link: document.getElementById("link").value,
+    budget: Number(document.getElementById("budget").value),
+    duration: document.getElementById("duration").value,
+    notes: document.getElementById("notes").value,
+    status: "Pending"
+  };
+
+  button.disabled = true;
+  button.textContent = "Submitting...";
+  result.textContent = "Saving your order...";
+
+  try {
+    const response = await fetch(SUPABASE_URL + "/rest/v1/orders", {
+      method: "POST",
+      headers: {
+        "apikey": SUPABASE_KEY,
+        "Authorization": "Bearer " + SUPABASE_KEY,
+        "Content-Type": "application/json",
+        "Prefer": "return=representation"
+      },
+      body: JSON.stringify(orderData)
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(errorText);
+    }
 
     const order = `
 NEW SOCIALBOOST ORDER
 
-Platform: ${platform}
-Service: ${service}
-Profile Link: ${link}
-Budget: ${budget === "Custom" ? "Custom" : "AED " + budget}
-Duration: ${duration}
-Instructions: ${notes || "None"}
+Platform: ${orderData.platform}
+Service: ${orderData.service}
+Profile Link: ${orderData.profile_link}
+Budget: AED ${orderData.budget}
+Duration: ${orderData.duration}
+Instructions: ${orderData.notes || "None"}
 
+Order saved in database.
 Please review this promotion request.
-    `;
+`;
 
-    const whatsappNumber = "971525427545";
+    result.textContent = "Order saved successfully! Opening WhatsApp.";
 
     const whatsappURL =
-      "https://wa.me/" + whatsappNumber +
+      "https://wa.me/" + WHATSAPP_NUMBER +
       "?text=" + encodeURIComponent(order);
 
-    document.getElementById("result").textContent =
-      "Opening WhatsApp. Please press Send to submit your order.";
-
     window.open(whatsappURL, "_blank");
+    document.getElementById("orderForm").reset();
+
+  } catch (error) {
+    console.error(error);
+    result.textContent = "Order could not be saved. Please try again.";
+  } finally {
+    button.disabled = false;
+    button.textContent = "Submit Order Request";
   }
-);
+});
 </script>
 
 </body>
